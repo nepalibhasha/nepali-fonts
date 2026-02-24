@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+node_modules/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Build artifacts
+fonts/web/
+fonts/processed/
+packages/web-fonts/fonts/
+packages/web-fonts/css/
+packages/converter-js/dist/
+
+# Internal planning files
+.planning/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

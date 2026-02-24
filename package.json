@@ -1,0 +1,8 @@
+{
+  "name": "nepali-fonts",
+  "private": true,
+  "workspaces": [
+    "packages/converter-js",
+    "packages/web-fonts"
+  ]
+}
