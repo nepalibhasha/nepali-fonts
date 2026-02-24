@@ -1,0 +1,12 @@
+{
+  "name": "Noto Serif Devanagari",
+  "source_repo": "notofonts/devanagari",
+  "release_tag": "NotoSerifDevanagari-v2.006",
+  "release_date": "2024-05-20",
+  "license": "OFL-1.1",
+  "license_url": "https://github.com/notofonts/devanagari/blob/main/OFL.txt",
+  "download_url": "https://github.com/notofonts/devanagari/releases/download/NotoSerifDevanagari-v2.006/NotoSerifDevanagari-v2.006.zip",
+  "variable": true,
+  "type": "serif",
+  "weights": "Thin (100) through Black (900)"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Mukta",
+  "source_repo": "EkType/Mukta",
+  "release_tag": "2.539",
+  "release_date": "2025-08-18",
+  "license": "OFL-1.1",
+  "license_url": "https://github.com/EkType/Mukta/blob/master/OFL.txt",
+  "download_url": "https://github.com/EkType/Mukta/releases/download/2.539/Mukta.Font.Family.2.539.zip",
+  "variable": false,
+  "type": "sans-serif",
+  "weights": "ExtraLight (200) through ExtraBold (800)"
+}

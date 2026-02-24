@@ -1,0 +1,13 @@
+{
+  "name": "Hind",
+  "source_repo": "itfoundry/hind",
+  "release_tag": "v2.000",
+  "release_date": "2014-11-21",
+  "license": "OFL-1.1",
+  "license_url": "https://github.com/itfoundry/hind/blob/master/OFL.txt",
+  "download_url": "https://github.com/itfoundry/hind/releases/download/v2.000/Hind-2_000.zip",
+  "variable": false,
+  "type": "sans-serif",
+  "weights": "Light (300) through Bold (700)",
+  "note": "GitHub release is v2.000 from 2014. Google Fonts hosts a post-processed version."
+}

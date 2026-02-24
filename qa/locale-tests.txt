@@ -1,0 +1,35 @@
+# Nepali vs Hindi Locale Differences
+# These tests verify that fonts produce correct Nepali-specific forms
+# when the NEP/ne language tag is active.
+
+## Digit One — the most critical difference
+# U+0967 (१) must have a vertical-bar form in Nepali
+# Hindi/default form: zigzag or curved right stroke
+# Nepali form: straight vertical bar on the right side
+#
+# Test: render the following with lang=ne and lang=hi, compare Digit One glyph
+१२३४५६७८९०
+
+# Isolated digit one for clear comparison
+१
+
+## Digit variations to check (some fonts differ on 5, 8, 9)
+५ ८ ९
+
+## Candrabindu frequency
+# Nepali uses candrabindu (ँ) more than Hindi
+# Verify it is present, correctly positioned, and doesn't collide with matras:
+हुँदैन (candrabindu over u-matra)
+मैँले (candrabindu over ai-matra)
+हाँस्यो (candrabindu over aa-matra)
+
+## Anusvara vs Candrabindu
+# Both should render distinctly:
+हुँदैन (candrabindu — nasalized vowel)
+हुंदैन (anusvara — less preferred in Nepali for this word)
+
+## Locl feature test
+# If the font has a locl feature for NEP, these should show Nepali-preferred forms.
+# Render with lang=ne and lang=hi, compare:
+काठमाण्डू
+१,२३४.५६

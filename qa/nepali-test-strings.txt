@@ -1,0 +1,106 @@
+# Nepali Test Strings
+# Standardized strings for validating font rendering.
+# Each section tests a specific shaping capability.
+
+## Basic Alphabet — Consonants
+क ख ग घ ङ
+च छ ज झ ञ
+ट ठ ड ढ ण
+त थ द ध न
+प फ ब भ म
+य र ल व
+श ष स ह
+
+## Basic Alphabet — Independent Vowels
+अ आ इ ई उ ऊ
+ऋ ए ऐ ओ औ अं अः
+
+## Matras (Dependent Vowels) with क
+का कि की कु कू
+कृ के कै को कौ कं कः कँ
+
+## Matras with ट (retroflex — different attachment points)
+टा टि टी टु टू
+टृ टे टै टो टौ टं टः
+
+## Nepali Digits
+० १ २ ३ ४ ५ ६ ७ ८ ९
+Note: Digit One (१) must have vertical-bar form in Nepali locale
+
+## Common Conjuncts
+क्ष (ksha)
+ज्ञ (jnya)
+त्र (tra)
+श्र (shra)
+द्ध (ddha)
+ट्ट (tta)
+ण्ड (nda)
+क्त (kta)
+क्र (kra)
+द्व (dva)
+द्य (dya)
+ह्न (hna)
+ह्म (hma)
+
+## Complex Clusters
+र्त्स्न्य (reph + stacked consonants)
+स्त्र (stra)
+न्त्र (ntra)
+ङ्क्ष (nksha)
+क्ष्म (kshma)
+
+## Reph (र्) Formation
+र्क र्ख र्ग र्घ
+र्च र्छ र्ज र्झ
+र्ट र्ठ र्ड र्ढ
+र्त र्थ र्द र्ध
+र्प र्फ र्ब र्भ
+र्म र्य र्ल र्व
+र्श र्ष र्स र्ह
+
+## Ra-sub (subscript र) Formation
+क्र ख्र ग्र घ्र
+त्र थ्र द्र ध्र
+प्र फ्र ब्र भ्र
+श्र स्र ह्र
+
+## Pre-base i-matra (ि) — must render left of consonant
+कि खि गि घि
+चि छि जि झि
+टि ठि डि ढि
+ति थि दि धि
+पि फि बि भि
+
+## Pre-base i-matra with conjuncts
+क्षि ज्ञि त्रि श्रि
+क्ति स्ति न्ति प्रि
+
+## Candrabindu (ँ) Usage
+हुँदैन
+छँदा
+हाँस्यो
+चुँडो
+मैँले
+
+## Anusvara (ं) Usage
+संसार
+हुन्छ
+सम्बन्ध
+
+## Visarga (ः) Usage
+दुःख
+अतः
+
+## Mixed Nepali/English
+Nepal को राजधानी Kathmandu हो।
+This is a test of mixed नेपाली and English text.
+Version 2.0 मा नयाँ features छन्।
+USB cable को Nepali मा के भन्छन्?
+
+## Sample Paragraphs
+नेपाल दक्षिण एशियाको एक सुन्दर देश हो। यसको राजधानी काठमाण्डू हो।
+नेपालमा हिमालय, पहाड र तराई गरी तीन भौगोलिक क्षेत्र छन्।
+सगरमाथा संसारको सबैभन्दा अग्लो हिमाल हो।
+
+नेपाली भाषा देवनागरी लिपिमा लेखिन्छ। यो एक अबुगिडा लिपि हो
+जसमा प्रत्येक व्यञ्जनमा एक अन्तर्निहित स्वर हुन्छ।

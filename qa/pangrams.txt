@@ -1,0 +1,20 @@
+# Nepali Pangrams and Coverage Strings
+# Useful for specimen generation and quick visual checks.
+
+# Pangram-style coverage strings (aim to cover most consonants and matras)
+ऋषिले कँचन मुनिको धूम्रपान त्यागी सफा खाना खाए।
+छिटो भूरो स्यालले अल्छी कुकुरमाथि हाम फाल्यो।
+
+# All consonant half-forms in sequence
+क् ख् ग् घ् ङ् च् छ् ज् झ् ञ् ट् ठ् ड् ढ् ण् त् थ् द् ध् न् प् फ् ब् भ् म् य् र् ल् व् श् ष् स् ह्
+
+# Full alphabet with aa-matra for visual rhythm check
+का खा गा घा ङा चा छा जा झा ञा टा ठा डा ढा णा ता था दा धा ना पा फा बा भा मा या रा ला वा शा षा सा हा
+
+# Common word set for horizontal economy comparison
+नमस्ते संसार
+काठमाण्डू
+प्रतिक्रिया
+सम्बन्ध
+विश्वविद्यालय
+स्वतन्त्रता

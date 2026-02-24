@@ -1,0 +1,49 @@
+# Conjunct Formation Tests
+# Verify that these character sequences produce correct ligatures/half-forms.
+# Format: Unicode sequence | expected description
+
+# Mandatory conjuncts (must form ligatures in any Devanagari font)
+क + ् + ष = क्ष    ksha ligature
+ज + ् + ञ = ज्ञ    jnya ligature
+त + ् + र = त्र    tra ligature
+श + ् + र = श्र    shra ligature
+
+# Common half-form conjuncts
+क + ् + त = क्त    ka half-form + ta
+क + ् + र = क्र    ka + ra-sub
+स + ् + त = स्त    sa half-form + ta
+न + ् + त = न्त    na half-form + ta
+प + ् + र = प्र    pa + ra-sub
+द + ् + ध = द्ध    da half-form + dha
+द + ् + व = द्व    da half-form + va
+द + ् + य = द्य    da half-form + ya
+ह + ् + न = ह्न    ha half-form + na
+ह + ् + म = ह्म    ha half-form + ma
+ट + ् + ट = ट्ट    tta stacked
+ण + ् + ड = ण्ड    nda stacked
+
+# Three-consonant clusters
+स + ् + त + ् + र = स्त्र    stra
+न + ् + त + ् + र = न्त्र    ntra
+ङ + ् + क + ् + ष = ङ्क्ष    nksha
+क + ् + ष + ् + म = क्ष्म    kshma
+र + ् + त + ् + स = र्त्स    rtsa (reph + tsa)
+
+# Reph (र + ् before consonant = superscript mark)
+र + ् + क = र्क    reph over ka
+र + ् + म = र्म    reph over ma
+र + ् + ह = र्ह    reph over ha
+
+# Ra-sub (consonant + ् + र = subscript ra)
+प + ् + र = प्र    ra-sub under pa
+ट + ् + र = ट्र    ra-sub under retroflex ta (different form)
+ग + ् + र = ग्र    ra-sub under ga
+भ + ् + र = भ्र    ra-sub under bha
+
+# Reph + Ra-sub in same cluster
+र + ् + क + ् + र = र्क्र    reph over ka with ra-sub
+
+# Edge cases
+द + ् + द = द्द    da + da stacked
+त + ् + त = त्त    ta + ta
+ड + ् + ड = ड्ड    dda + dda
