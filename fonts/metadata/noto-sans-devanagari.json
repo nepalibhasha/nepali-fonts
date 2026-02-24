@@ -8,5 +8,17 @@
   "download_url": "https://github.com/notofonts/devanagari/releases/download/NotoSansDevanagari-v2.006/NotoSansDevanagari-v2.006.zip",
   "variable": true,
   "type": "sans-serif",
-  "weights": "Thin (100) through Black (900)"
+  "weights": "Thin (100) through Black (900)",
+  "sha256": {
+    "NotoSansDevanagari-Black.ttf": "e282c23cb1b82b5c4d681fe8a74160e6a8bce1ae4ba1fcb3039c85df351b10ac",
+    "NotoSansDevanagari-Bold.ttf": "ee8bb4df2203759d8d302a5e05aa2206b98067bd24a10e8f8c3d930f4b23135a",
+    "NotoSansDevanagari-ExtraBold.ttf": "1786b0e58ffa440a751956f798ce1c3f5f048ec93ba9085df14a125b89b4c4d5",
+    "NotoSansDevanagari-ExtraLight.ttf": "b9d100628041d14a250426ea9ae45441b1f7ad5eddf4eb5721c0d1818774aaa7",
+    "NotoSansDevanagari-Light.ttf": "8373e030ce5bd868136da9bb8b7b03bc371a1be1e17842a61d877a4a4e91f447",
+    "NotoSansDevanagari-Medium.ttf": "721a423a73902876e297382f0c9be30ce8c8fb523ca4a08886ed5a0ec257f5c1",
+    "NotoSansDevanagari-Regular.ttf": "da2d2135e978c6f68852cfd8201c3a067df1acf73232fe80c58f89e6302ee6e8",
+    "NotoSansDevanagari-SemiBold.ttf": "3d80db0e3a61f3f94c9ac6aa2533015cc55049b5603eb5f34a7d8adea5172b88",
+    "NotoSansDevanagari-Thin.ttf": "54c3257e94bee680562165d6d8958ff103ba5a16ebe4e318ceac87eb8ec514ff",
+    "NotoSansDevanagari[wdth,wght].ttf": "4ac72d5f9e7f20dbc5910dbaf526d4fc25d2596d67a9df77150d098ba87c2002"
+  }
 }

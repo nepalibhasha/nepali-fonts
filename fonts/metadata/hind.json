@@ -9,5 +9,12 @@
   "variable": false,
   "type": "sans-serif",
   "weights": "Light (300) through Bold (700)",
-  "note": "GitHub release is v2.000 from 2014. Google Fonts hosts a post-processed version."
+  "note": "GitHub release is v2.000 from 2014. Google Fonts hosts a post-processed version.",
+  "sha256": {
+    "Hind-Bold.otf": "368a256d501d7d5d2c2a771dad18631b01acafae190395f31852e0ad223cf3b4",
+    "Hind-Light.otf": "e3dd1529ec2bbd778554fdd241cb5f3a7637c8c2cdac5eb3e760cbfe030dece7",
+    "Hind-Medium.otf": "a9b2a60f6abb4cd68494da231eb59513c79d0dd77d5075779822709033ef4263",
+    "Hind-Regular.otf": "b5114791def532bf511766b701e6f3244f1099f194f6a10c49ca6483e75620da",
+    "Hind-SemiBold.otf": "0f5329576f134dc41a6a579764a49c827309ea27c77ca42551ebc28f5dd96ee7"
+  }
 }

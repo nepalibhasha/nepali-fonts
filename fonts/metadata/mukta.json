@@ -8,5 +8,14 @@
   "download_url": "https://github.com/EkType/Mukta/releases/download/2.539/Mukta.Font.Family.2.539.zip",
   "variable": false,
   "type": "sans-serif",
-  "weights": "ExtraLight (200) through ExtraBold (800)"
+  "weights": "ExtraLight (200) through ExtraBold (800)",
+  "sha256": {
+    "Mukta-Bold.ttf": "e7a5921cc9ef859327fdd81d4229d8dc3da1e0d9d3c851168805a398d907961f",
+    "Mukta-ExtraBold.ttf": "25de01f590584afea0d6b6380cc307c6566ac1ed16b31a7ff2551853ab6eb1bd",
+    "Mukta-ExtraLight.ttf": "62fcdc06e85cd1c80bcad3058e04b71037c398401b25421278bc7e92da84fa13",
+    "Mukta-Light.ttf": "05e3be8c4e6243338199c061894f3d449a63e5c8f701aa88a58c2d94b7500db5",
+    "Mukta-Medium.ttf": "82e277ed13cd0bea930bdd8bde70ca6ee9d06923c474c4e516d0e98ac433ec77",
+    "Mukta-Regular.ttf": "b110d0e831f99163c719074e2d7a5a700a01ba0947ff4b67acddcdd818fc4af7",
+    "Mukta-SemiBold.ttf": "36ecd72eb53a0a819fc817555b235dc8c0409069d51f327f94c7eab9d73613bb"
+  }
 }
