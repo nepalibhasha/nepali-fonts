@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Converter — Nepali Fonts</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../packages/web-fonts/css/noto-sans-devanagari.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">Nepali Fonts</a>
+      <ul class="nav-links">
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="converter.html" class="active">Converter</a></li>
+        <li><a href="specimen.html">Specimen</a></li>
+        <li><a href="docs.html">Docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <h1>Legacy Font Converter</h1>
+    <p>Convert text from legacy Nepali fonts (Preeti, Kantipur, Sagarmatha, Himalb) to Unicode Devanagari.</p>
+
+    <div class="toolbar">
+      <select id="font-select">
+        <option value="auto">Auto-detect font</option>
+        <option value="preeti">Preeti</option>
+        <option value="kantipur">Kantipur</option>
+        <option value="sagarmatha">Sagarmatha</option>
+        <option value="himalb">Himalb</option>
+      </select>
+      <button class="btn" id="convert-btn">Convert</button>
+      <span id="detected-label" class="badge" style="display: none;"></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <label style="font-size: 0.85rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">
+          Legacy text input
+        </label>
+        <textarea id="input" placeholder="Paste legacy Nepali text here..."></textarea>
+      </div>
+      <div>
+        <label style="font-size: 0.85rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">
+          Unicode output
+        </label>
+        <textarea id="output" readonly style="font-family: 'Noto Sans Devanagari', sans-serif; background: var(--color-code-bg);" placeholder="Converted Unicode text will appear here..."></textarea>
+      </div>
+    </div>
+
+    <div style="margin-top: 0.75rem;">
+      <button class="btn btn-secondary" id="copy-btn">Copy output</button>
+    </div>
+
+    <div id="error-msg" style="color: #dc2626; margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+  </main>
+
+  <script src="../js/converter.js"></script>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    const fontSelect = document.getElementById('font-select');
+    const convertBtn = document.getElementById('convert-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const detectedLabel = document.getElementById('detected-label');
+    const errorMsg = document.getElementById('error-msg');
+
+    convertBtn.addEventListener('click', function() {
+      errorMsg.style.display = 'none';
+      detectedLabel.style.display = 'none';
+      const text = input.value;
+      if (!text.trim()) {
+        output.value = '';
+        return;
+      }
+
+      try {
+        let font = fontSelect.value;
+        if (font === 'auto') {
+          const detected = NepaliConverter.detectFont(text);
+          if (!detected) {
+            errorMsg.textContent = 'Could not detect the font. The text may already be Unicode, or please select a font manually.';
+            errorMsg.style.display = 'block';
+            output.value = '';
+            return;
+          }
+          font = detected;
+          detectedLabel.textContent = 'Detected: ' + font.charAt(0).toUpperCase() + font.slice(1);
+          detectedLabel.style.display = 'inline-block';
+        }
+        output.value = NepaliConverter.convert(text, font);
+      } catch (e) {
+        errorMsg.textContent = e.message;
+        errorMsg.style.display = 'block';
+        output.value = '';
+      }
+    });
+
+    copyBtn.addEventListener('click', function() {
+      if (!output.value) return;
+      navigator.clipboard.writeText(output.value).then(function() {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function() { copyBtn.textContent = 'Copy output'; }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Nepali Fonts</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">Nepali Fonts</a>
+      <ul class="nav-links">
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="converter.html">Converter</a></li>
+        <li><a href="specimen.html">Specimen</a></li>
+        <li><a href="docs.html" class="active">Docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <h1>Documentation</h1>
+    <p>How to use the web fonts, Python converter, and LaTeX package in your projects.</p>
+
+    <!-- Web Fonts -->
+    <div class="card">
+      <h2>Web Fonts</h2>
+      <p>Install the web fonts package and import the CSS for the families you need.</p>
+
+      <h3>Install</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>npm install @nepalibhasha/fonts</code>
+      </div>
+
+      <h3>Import CSS</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>/* Import one or more font families */
+@import '@nepalibhasha/fonts/css/noto-sans-devanagari.css';
+@import '@nepalibhasha/fonts/css/mukta.css';
+@import '@nepalibhasha/fonts/css/hind.css';
+@import '@nepalibhasha/fonts/css/noto-serif-devanagari.css';</code>
+      </div>
+
+      <h3>Use in CSS</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>body {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.serif-text {
+  font-family: 'Noto Serif Devanagari', serif;
+}</code>
+      </div>
+
+      <h3>Nepali-only subsets</h3>
+      <p>For smaller file sizes, use the <code>-nepali</code> variant CSS files which only include Devanagari + Basic Latin glyphs:</p>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>@import '@nepalibhasha/fonts/css/noto-sans-devanagari-nepali.css';
+@import '@nepalibhasha/fonts/css/mukta-nepali.css';</code>
+      </div>
+    </div>
+
+    <!-- Python Converter -->
+    <div class="card">
+      <h2>Python Converter</h2>
+      <p>Convert legacy Nepali font text (Preeti, Kantipur, Sagarmatha, Himalb) to Unicode.</p>
+
+      <h3>Install</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>pip install nepali-converter</code>
+      </div>
+
+      <h3>Python API</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>from nepali_converter import convert, detect_font
+
+# Auto-detect and convert
+font = detect_font("g]kfn")       # returns "preeti"
+text = convert("g]kfn", "preeti")  # returns "नेपाल"
+
+# Convert with known font
+text = convert("g]kfn", "preeti")</code>
+      </div>
+
+      <h3>CLI</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code># Convert a file
+nepali-convert --font preeti input.txt -o output.txt
+
+# Auto-detect font
+nepali-convert --font auto input.txt
+
+# Convert from stdin
+echo "g]kfn" | nepali-convert --font preeti</code>
+      </div>
+    </div>
+
+    <!-- JavaScript Converter -->
+    <div class="card">
+      <h2>JavaScript Converter</h2>
+      <p>Use the converter in Node.js or browser applications.</p>
+
+      <h3>Install</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>npm install @nepalibhasha/converter</code>
+      </div>
+
+      <h3>Usage (ESM)</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>import { convert, detectFont } from '@nepalibhasha/converter';
+
+const font = detectFont("g]kfn");       // "preeti"
+const text = convert("g]kfn", "preeti"); // "नेपाल"</code>
+      </div>
+
+      <h3>Browser (script tag)</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>&lt;script src="path/to/converter.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const text = NepaliConverter.convert("g]kfn", "preeti");
+  const font = NepaliConverter.detectFont("g]kfn");
+&lt;/script&gt;</code>
+      </div>
+    </div>
+
+    <!-- LaTeX -->
+    <div class="card">
+      <h2>LaTeX Package</h2>
+      <p>Typeset Nepali text with XeLaTeX using the included font families.</p>
+
+      <h3>Usage</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>\documentclass{article}
+\usepackage{nepali}
+
+\begin{document}
+\begin{nepali}
+नमस्ते संसार
+\end{nepali}
+\end{document}</code>
+      </div>
+
+      <h3>Compile</h3>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>xelatex document.tex</code>
+      </div>
+
+      <h3>Font selection</h3>
+      <p>The package auto-detects Noto Sans/Serif Devanagari by default. To override, use <code>\setnepalifont</code>:</p>
+      <div class="code-block">
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <code>% Override the default font
+\setnepalifont[Script=Devanagari, Language=Nepali]{Mukta}
+
+% Compile with xelatex or lualatex (pdflatex is not supported)</code>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function copyCode(btn) {
+      const code = btn.parentElement.querySelector('code');
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

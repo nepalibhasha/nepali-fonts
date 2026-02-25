@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Fonts — Nepali Fonts</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../packages/web-fonts/css/noto-sans-devanagari.css">
+  <link rel="stylesheet" href="../../packages/web-fonts/css/noto-serif-devanagari.css">
+  <link rel="stylesheet" href="../../packages/web-fonts/css/mukta.css">
+  <link rel="stylesheet" href="../../packages/web-fonts/css/hind.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">Nepali Fonts</a>
+      <ul class="nav-links">
+        <li><a href="compare.html" class="active">Compare</a></li>
+        <li><a href="converter.html">Converter</a></li>
+        <li><a href="specimen.html">Specimen</a></li>
+        <li><a href="docs.html">Docs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <h1>Compare Fonts</h1>
+    <p>Type or paste Nepali text to see it rendered in all four font families.</p>
+
+    <textarea id="input" placeholder="नमस्ते नेपाल — यहाँ टाइप गर्नुहोस्">नमस्ते नेपाल</textarea>
+
+    <div class="slider-group">
+      <label for="size-slider">Font size</label>
+      <input type="range" id="size-slider" min="14" max="72" value="28">
+      <span class="slider-value" id="size-value">28px</span>
+    </div>
+
+    <div class="grid-2" id="panels">
+      <div class="output-panel">
+        <h3>Noto Sans Devanagari</h3>
+        <div class="output-text" style="font-family: 'Noto Sans Devanagari', sans-serif;"></div>
+      </div>
+      <div class="output-panel">
+        <h3>Noto Serif Devanagari</h3>
+        <div class="output-text" style="font-family: 'Noto Serif Devanagari', serif;"></div>
+      </div>
+      <div class="output-panel">
+        <h3>Mukta</h3>
+        <div class="output-text" style="font-family: 'Mukta', sans-serif;"></div>
+      </div>
+      <div class="output-panel">
+        <h3>Hind</h3>
+        <div class="output-text" style="font-family: 'Hind', sans-serif;"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const input = document.getElementById('input');
+    const panels = document.querySelectorAll('#panels .output-text');
+    const slider = document.getElementById('size-slider');
+    const sizeValue = document.getElementById('size-value');
+
+    function update() {
+      const text = input.value;
+      panels.forEach(p => { p.textContent = text; });
+    }
+
+    function updateSize() {
+      const size = slider.value + 'px';
+      sizeValue.textContent = size;
+      panels.forEach(p => { p.style.fontSize = size; });
+    }
+
+    input.addEventListener('input', update);
+    slider.addEventListener('input', updateSize);
+
+    update();
+    updateSize();
+  </script>
+</body>
+</html>
