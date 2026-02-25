@@ -1,0 +1,23 @@
+name: Font QA
+on:
+  push:
+    paths:
+      - "fonts/sources/**"
+      - "qa/**"
+      - "packages/font-tools/**"
+  pull_request:
+    paths:
+      - "fonts/sources/**"
+      - "qa/**"
+      - "packages/font-tools/**"
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - name: Install font-tools dependencies
+        run: uv sync
+        working-directory: packages/font-tools
+      - run: uv run --project packages/font-tools python scripts/run-qa.py

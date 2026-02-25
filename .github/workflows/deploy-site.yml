@@ -1,0 +1,47 @@
+name: Deploy Site
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "fonts/web/**"
+      - "packages/web-fonts/css/**"
+      - "packages/converter-js/**"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Build converter bundle
+        run: cd packages/converter-js && npm run build
+      - name: Assemble site
+        run: |
+          cp packages/converter-js/dist/index.global.js site/js/converter.js
+          mkdir -p site/fonts/css
+          cp packages/web-fonts/css/*.css site/fonts/css/
+          cp -r fonts/web/* site/fonts/
+      - name: Rewrite font CSS paths for site root
+        run: |
+          sed -i "s|../../fonts/web/|../fonts/|g" site/fonts/css/*.css
+      - name: Rewrite HTML font CSS links
+        run: |
+          sed -i "s|../packages/web-fonts/css/|fonts/css/|g" site/index.html
+          sed -i "s|../../packages/web-fonts/css/|../fonts/css/|g" site/pages/*.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
