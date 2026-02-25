@@ -9,10 +9,8 @@ dist/
 .mypy_cache/
 
 # Build artifacts
-fonts/web/
 fonts/processed/
 packages/web-fonts/fonts/
-packages/web-fonts/css/
 packages/converter-js/dist/
 
 # Internal planning files

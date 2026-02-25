@@ -1,0 +1,82 @@
+/* Noto Serif Devanagari (Nepali subset) — @nepalibhasha/fonts */
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Black-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Bold-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-ExtraBold-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-ExtraLight-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Light-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Medium-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Regular-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-SemiBold-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Thin-nepali.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+0000-007F, U+2000-206F;
+}

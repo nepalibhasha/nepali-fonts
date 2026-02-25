@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "Nepali/Devanagari web fonts with optimized WOFF2 subsets and CSS",
   "files": [
-    "css/",
-    "fonts/"
+    "css/"
   ],
   "license": "OFL-1.1"
 }
