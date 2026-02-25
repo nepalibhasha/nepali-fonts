@@ -2,6 +2,8 @@
 
 Curated OFL-1.1 Devanagari fonts and offline tooling for Nepali digital typography.
 
+**[Live Demo & Docs](https://nepalibhasha.github.io/nepali-fonts/)** — compare fonts, convert legacy text, view specimens
+
 Definitions and interface contracts: [`DEFINITIONS.md`](DEFINITIONS.md)
 
 ## What's included

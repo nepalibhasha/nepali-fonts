@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v4
-      - run: cd packages/converter && uv sync && uv run pytest
+      - run: cd packages/converter && uv sync --extra dev && uv run pytest
 
   javascript:
     runs-on: ubuntu-latest

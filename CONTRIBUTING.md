@@ -18,8 +18,8 @@ git clone https://github.com/nepalibhasha/nepali-fonts.git
 cd nepali-fonts
 
 # Install Python dependencies
-cd packages/font-tools && uv sync && cd ../..
-cd packages/converter && uv sync && cd ../..
+cd packages/font-tools && uv sync --extra dev && cd ../..
+cd packages/converter && uv sync --extra dev && cd ../..
 
 # Install JavaScript dependencies
 npm install
