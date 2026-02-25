@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{nepali}
+
+\setnepalifont[
+  Path=../../fonts/sources/mukta/,
+  Extension=.ttf,
+  UprightFont=Mukta-Regular,
+  BoldFont=Mukta-Bold
+]{Mukta-Regular}
+
+\begin{document}
+\section*{Mixed Script Example}
+\textbf{Primary Nepali font: Mukta (Regular/Bold)}\\
+\texttt{fonts/sources/mukta/}
+
+This line is in English and includes inline Nepali:
+\textnepali{नेपालको राजधानी काठमाण्डू हो।}
+
+\begin{nepali}
+Version 2.0 मा नयाँ features थपिएका छन् र Unicode workflow सुधारिएको छ।
+\medskip
+कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
+\end{nepali}
+
+\subsection*{Large Type Section}
+\textit{Active font: Mukta (Large sample)}\\
+\begin{nepali}
+{\Large Unicode workflow मा readability र rhythm दुवै महत्वपूर्ण हुन्छन्।}\\[0.4em]
+{\LARGE नेपाली + English mixed content: Build status green, deployment ready.}
+\end{nepali}
+
+\end{document}

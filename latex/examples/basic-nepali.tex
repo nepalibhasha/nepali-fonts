@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{nepali}
+
+% Use local repo font files so this compiles without system font install.
+\setnepalifont[
+  Path=../../fonts/sources/noto-sans-devanagari/,
+  Extension=.ttf,
+  UprightFont=NotoSansDevanagari-Regular,
+  BoldFont=NotoSansDevanagari-Bold
+]{NotoSansDevanagari-Regular}
+
+\begin{document}
+\section*{Basic Nepali}
+\textbf{Font used: Noto Sans Devanagari (Regular/Bold)}\\
+\texttt{fonts/sources/noto-sans-devanagari/}
+
+\begin{nepali}
+नमस्ते! यो नेपाली भाषामा लेखिएको आधारभूत उदाहरण हो।
+नेपाल दक्षिण एशियाको एक सुन्दर देश हो।
+\medskip
+हिमाल, पहाड र तराईले बनेको हाम्रो देश विविधताको भूमि हो।
+भाषा, संस्कृति र प्रकृतिको सौन्दर्य यहाँका शब्दमा झल्किन्छ।
+\end{nepali}
+
+\subsection*{Large Type Section}
+\textit{Active font: Noto Sans Devanagari (Large sample)}\\
+\begin{nepali}
+{\Large नेपाल सुन्दर छ, भाषा समृद्ध छ, र लिपि स्पष्ट छ।}\\[0.4em]
+{\LARGE अक्षरको आकार बढ्दा पनि संयोजन र मात्राहरू स्पष्ट देखिनुपर्छ।}
+\end{nepali}
+
+\end{document}

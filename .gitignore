@@ -23,3 +23,8 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# LaTeX build artifacts
+latex/examples/*.aux
+latex/examples/*.log
+latex/examples/*.out

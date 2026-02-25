@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{nepali}
+
+% Primary Nepali sans setup (repo-local files)
+\setnepalifont[
+  Path=../../fonts/sources/noto-sans-devanagari/,
+  Extension=.ttf,
+  UprightFont=NotoSansDevanagari-Regular,
+  BoldFont=NotoSansDevanagari-Bold
+]{NotoSansDevanagari-Regular}
+
+% Additional Nepali families for mixed-font examples
+\newfontfamily\nepaliserif[
+  Path=../../fonts/sources/noto-serif-devanagari/,
+  Extension=.ttf,
+  UprightFont=NotoSerifDevanagari-Regular,
+  BoldFont=NotoSerifDevanagari-Bold,
+  ItalicFont=NotoSerifDevanagari-Light,
+  Script=Devanagari,
+  Language=Nepali
+]{NotoSerifDevanagari-Regular}
+
+\newfontfamily\nepalimukta[
+  Path=../../fonts/sources/mukta/,
+  Extension=.ttf,
+  UprightFont=Mukta-Regular,
+  BoldFont=Mukta-Bold,
+  ItalicFont=Mukta-Light,
+  Script=Devanagari,
+  Language=Nepali
+]{Mukta-Regular}
+
+\begin{document}
+\section*{Advanced Usage}
+\textbf{Fonts used in this document:}\\
+Noto Sans Devanagari (primary), Noto Serif Devanagari, Mukta.
+
+\subsection*{1. Mixed Script Paragraph}
+\textit{Active font in this section: Noto Sans Devanagari}\\
+This line is English documentation text, but contains inline Nepali:
+\textnepali{यो लाइन नेपालीमा पनि देखिन्छ।}
+Build output should preserve script shaping and baseline rhythm.
+
+\begin{nepali}
+Version 2.0 मा converter logic सुधारिएको छ, तर release process अझै incremental छ।
+JSON metadata, WOFF2 packaging, र CLI commands एउटै workflow मा प्रयोग भएका छन्।
+\end{nepali}
+
+\subsection*{2. Weight and Emphasis}
+\textit{Active font in this section: Noto Sans Devanagari}\\
+\begin{nepali}
+सामान्य पाठ: यो नियमित (Regular) शैलीको उदाहरण हो।\\
+\textbf{गाढा पाठ: यो Bold शैलीको उदाहरण हो।}\\
+\textit{टेढो/Slanted पाठ: Devanagari मा true italic प्रायः हुँदैन, यो font-driven fallback हो।}\\
+\textbf{\textit{गाढा + टेढो: संयुक्त emphasis उदाहरण।}}
+\end{nepali}
+
+\subsection*{3. Mixed Nepali Fonts in One Document}
+\textit{Each line below explicitly switches to a different font family.}
+{\nepalifont\textnepali{Noto Sans Devanagari: सफा र UI-friendly शैली।}}\\[0.4em]
+{\nepaliserif\textnepali{Noto Serif Devanagari: पुस्तक-जस्तो serif बनावट।}}\\[0.4em]
+{\nepalimukta\textnepali{Mukta: खुला आकार र आधुनिक दृश्य लय।}}
+
+\subsection*{4. Mixed Fonts + Mixed Scripts}
+\textit{Active Nepali font in this section: Noto Serif Devanagari}\\
+{\nepaliserif
+\textnepali{काठमाण्डूमा release pipeline सफल भयो;}}
+CI status is \textbf{green}, and packaging target is
+\texttt{@nepalibhasha/fonts}.
+
+\subsection*{5. Nepali Numerals and Conjunct Stress}
+\textit{Active font in this section: Noto Sans Devanagari}\\
+\begin{nepali}
+अंक: ० १ २ ३ ४ ५ ६ ७ ८ ९\\
+संयुक्ताक्षर: क्ष ज्ञ त्र श्र द्ध ट्ट ण्ड स्त्र न्त्र
+\end{nepali}
+
+\subsection*{6. Sanskrit Verse Block (Subhashita)}
+\textit{Active font in this section: Noto Serif Devanagari}\\
+{\nepaliserif
+\begin{nepali}
+अयं निजः परो वेति गणना लघुचेतसाम्।\\
+उदारचरितानां तु वसुधैव कुटुम्बकम्॥
+\end{nepali}
+}
+
+\subsection*{7. Nepali Stanza for Flow Testing}
+\textit{Active font in this section: Mukta}\\
+{\nepalimukta
+\begin{nepali}
+पहाडको हावामा गुन्जिन्छ गाउँको पुरानो भाका,\\
+बिहानीको घामसँगै जाग्छ श्रम र सपनाको कथा।\\
+माटोको गन्धमा मिसिएको स्मृति र संघर्षको धुन,\\
+शब्दहरूमा बाँच्छ हाम्रो भाषा, हाम्रो पहिचान, हाम्रो मन।
+\end{nepali}
+}
+
+\end{document}

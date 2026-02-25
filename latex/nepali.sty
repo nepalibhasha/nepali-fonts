@@ -1,0 +1,77 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nepali}[2026/02/25 v0.1 Nepali typesetting support]
+
+\RequirePackage{iftex}
+\ifPDFTeX
+  \PackageError{nepali}{%
+    This package requires XeLaTeX or LuaLaTeX.\MessageBreak
+    pdfLaTeX cannot shape OpenType Devanagari text properly.%
+  }{Compile with xelatex or lualatex.}
+\fi
+
+\RequirePackage{fontspec}
+\RequirePackage{polyglossia}
+
+\setdefaultlanguage{english}
+\setotherlanguage{nepali}
+
+% Default Nepali font family.
+% Load Noto if present; otherwise fall back so the package itself remains usable.
+\IfFontExistsTF{Noto Sans Devanagari}{%
+  \ifLuaTeX
+    \newfontfamily\nepalifont{Noto Sans Devanagari}[
+      Script=Devanagari,
+      Language=Nepali,
+      Renderer=HarfBuzz,
+      BoldFont={Noto Sans Devanagari Bold}
+    ]
+  \else
+    \newfontfamily\nepalifont{Noto Sans Devanagari}[
+      Script=Devanagari,
+      Language=Nepali,
+      BoldFont={Noto Sans Devanagari Bold}
+    ]
+  \fi
+}{%
+  \IfFontExistsTF{Noto Serif Devanagari}{%
+    \newfontfamily\nepalifont{Noto Serif Devanagari}[
+      Script=Devanagari,
+      Language=Nepali
+    ]
+  }{%
+    \newfontfamily\nepalifont{Seravek}
+  }%
+}
+
+% Override the active Nepali font.
+\newcommand{\setnepalifont}[2][]{%
+  \ifLuaTeX
+    \renewfontfamily\nepalifont{#2}[
+      Script=Devanagari,
+      Language=Nepali,
+      Renderer=HarfBuzz,
+      #1
+    ]%
+  \else
+    \renewfontfamily\nepalifont{#2}[
+      Script=Devanagari,
+      Language=Nepali,
+      #1
+    ]%
+  \fi
+}
+
+\providecommand{\textnepali}[1]{{\nepalifont #1}}
+
+% Provide a block-level environment only if one does not already exist.
+\makeatletter
+\@ifundefined{nepali}{%
+  \newenvironment{nepali}{%
+    \begin{otherlanguage}{nepali}\nepalifont
+  }{%
+    \end{otherlanguage}
+  }%
+}{}
+\makeatother
+
+\endinput
