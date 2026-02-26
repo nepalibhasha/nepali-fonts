@@ -1,8 +1,12 @@
-"""Tests for PDF rescue flow."""
+"""Tests for PDF rescue flow (mock-based, no real PDF files)."""
 
 from __future__ import annotations
 
 from pathlib import Path
+
+import pytest
+
+fitz = pytest.importorskip("fitz", reason="PyMuPDF not installed")
 
 from nepali_converter.pdf import rescue_pdf
 

@@ -4,7 +4,11 @@ Creates synthetic PDFs with legacy font names (Preeti, Kantipur, etc.)
 and verifies that rescue_pdf correctly detects and converts the text.
 """
 
+from pathlib import Path
+
 import pytest
+
+fitz = pytest.importorskip("fitz", reason="PyMuPDF not installed")
 
 from nepali_converter.pdf import rescue_pdf
 
@@ -203,7 +207,7 @@ def multipage_pdf(tmp_path):
     return path
 
 
-# --- Tests ---
+# --- Tests using generated PDFs ---
 
 
 def test_rescue_preeti_pdf(preeti_pdf):
@@ -250,3 +254,22 @@ def test_rescue_multipage_single_page(multipage_pdf):
     assert "नेपाल" not in result
     assert "नमस्ते" in result
     assert "हिमाल" not in result
+
+
+# --- Tests using committed fixture files ---
+
+FIXTURES_DIR = Path(__file__).parent / "fixtures"
+
+
+def test_fixture_preeti_sample():
+    """Rescue preeti_sample.pdf and validate against snapshot."""
+    result = rescue_pdf(str(FIXTURES_DIR / "preeti_sample.pdf"))
+    expected = (FIXTURES_DIR / "preeti_sample_rescued.txt").read_text(encoding="utf-8")
+    assert result == expected
+
+
+def test_fixture_multipage_sample():
+    """Rescue multipage_sample.pdf and validate against snapshot."""
+    result = rescue_pdf(str(FIXTURES_DIR / "multipage_sample.pdf"))
+    expected = (FIXTURES_DIR / "multipage_sample_rescued.txt").read_text(encoding="utf-8")
+    assert result == expected

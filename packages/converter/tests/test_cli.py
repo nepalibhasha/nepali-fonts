@@ -154,6 +154,7 @@ def test_multiline_input():
 
 
 def test_nonexistent_file():
-    """Non-existent input file produces an error."""
+    """Non-existent input file produces an error with the file path."""
     rc, _, stderr = run_cli("/nonexistent/file.txt", "--font", "preeti")
     assert rc != 0
+    assert "No such file" in stderr or "/nonexistent/file.txt" in stderr
