@@ -2,6 +2,8 @@
 
 Convert legacy Nepali font encodings (Preeti, Kantipur, Sagarmatha, Himalb) to Unicode Devanagari. Also rescues legacy-encoded text from PDFs (non-OCR).
 
+**Package size:** 15 kB (wheel) / 20 kB (sdist)
+
 Part of the [nepali-fonts](https://github.com/nepalibhasha/nepali-fonts) project.
 
 ## Installation

@@ -14,6 +14,14 @@ Definitions and interface contracts: [`DEFINITIONS.md`](DEFINITIONS.md)
 - **Web fonts** — Pre-subsetted WOFF2 with layout closure preserved, distributed as npm package
 - **LaTeX package** — `nepali.sty` for XeLaTeX/LuaLaTeX academic typesetting
 
+## Published packages
+
+| Package | Registry | Size | Install |
+|---------|----------|------|---------|
+| [`@nepalibhasha/fonts`](https://www.npmjs.com/package/@nepalibhasha/fonts) | npm | 3.1 MB | `npm install @nepalibhasha/fonts` |
+| [`@nepalibhasha/converter`](https://www.npmjs.com/package/@nepalibhasha/converter) | npm | 13 kB | `npm install @nepalibhasha/converter` |
+| [`nepali-converter`](https://pypi.org/project/nepali-converter/) | PyPI | 15 kB | `pip install nepali-converter` |
+
 ## Quick start
 
 ### Legacy-to-Unicode converter (Python)
