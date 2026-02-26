@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Black.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Black.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Bold.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Bold.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-ExtraBold.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-ExtraBold.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-ExtraLight.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-ExtraLight.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -41,7 +41,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Light.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Light.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -50,7 +50,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Medium.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Medium.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Regular.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Regular.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -68,7 +68,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-SemiBold.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-SemiBold.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -77,6 +77,6 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('../../fonts/web/noto-serif-devanagari/NotoSerifDevanagari-Thin.woff2') format('woff2');
+  src: url('../woff2/noto-serif-devanagari/NotoSerifDevanagari-Thin.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }

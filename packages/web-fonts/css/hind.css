@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../../fonts/web/hind/Hind-Bold.woff2') format('woff2');
+  src: url('../woff2/hind/Hind-Bold.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('../../fonts/web/hind/Hind-Light.woff2') format('woff2');
+  src: url('../woff2/hind/Hind-Light.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../../fonts/web/hind/Hind-Medium.woff2') format('woff2');
+  src: url('../woff2/hind/Hind-Medium.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -32,7 +32,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../../fonts/web/hind/Hind-Regular.woff2') format('woff2');
+  src: url('../woff2/hind/Hind-Regular.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }
 
@@ -41,6 +41,6 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../../fonts/web/hind/Hind-SemiBold.woff2') format('woff2');
+  src: url('../woff2/hind/Hind-SemiBold.woff2') format('woff2');
   unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
 }

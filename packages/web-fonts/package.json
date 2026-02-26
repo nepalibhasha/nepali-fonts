@@ -3,7 +3,28 @@
   "version": "0.1.0",
   "description": "Nepali/Devanagari web fonts with optimized WOFF2 subsets and CSS",
   "files": [
-    "css/"
+    "css/",
+    "woff2/"
+  ],
+  "scripts": {
+    "prepublishOnly": "rm -rf woff2 && mkdir woff2 && cp -R ../../fonts/web/. woff2/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nepalibhasha/nepali-fonts.git",
+    "directory": "packages/web-fonts"
+  },
+  "author": "nepalibhasha",
+  "keywords": [
+    "fonts",
+    "nepali",
+    "devanagari",
+    "woff2",
+    "web-fonts",
+    "hind",
+    "mukta",
+    "noto-sans-devanagari",
+    "noto-serif-devanagari"
   ],
   "license": "OFL-1.1"
 }
