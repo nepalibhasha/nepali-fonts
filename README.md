@@ -29,9 +29,10 @@ Auto-detect the legacy font:
 nepali-convert input.txt --output output.txt
 ```
 
-Rescue text from a legacy-font PDF:
+Rescue text from a legacy-font PDF (requires `[pdf]` extra):
 
 ```bash
+pip install nepali-converter[pdf]
 nepali-convert --pdf document.pdf --output rescued.txt
 ```
 
