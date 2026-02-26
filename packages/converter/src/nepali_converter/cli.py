@@ -6,7 +6,6 @@ import sys
 from nepali_converter.converter import convert
 from nepali_converter.detector import detect_font
 from nepali_converter.maps import SUPPORTED_FONTS
-from nepali_converter.pdf import rescue_pdf
 
 
 def _parse_pages(value: str) -> tuple[int, int]:
@@ -60,6 +59,14 @@ def main():
         parser.error("--pages can only be used with --pdf.")
 
     if args.pdf:
+        try:
+            from nepali_converter.pdf import rescue_pdf
+        except ImportError:
+            print(
+                "PDF support requires PyMuPDF. Install with: pip install nepali-converter[pdf]",
+                file=sys.stderr,
+            )
+            sys.exit(1)
         result = rescue_pdf(args.input, output_path=args.output, pages=args.pages)
         if not args.output:
             sys.stdout.write(result)
@@ -92,3 +99,7 @@ def main():
             f.write(result)
     else:
         sys.stdout.write(result)
+
+
+if __name__ == "__main__":
+    main()

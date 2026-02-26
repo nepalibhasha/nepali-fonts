@@ -4,12 +4,45 @@ version = "0.1.0"
 description = "Legacy Nepali font to Unicode converter with PDF rescue"
 requires-python = ">=3.11"
 license = "MIT"
-dependencies = [
-    "PyMuPDF",
+readme = "README.md"
+authors = [
+    { name = "nepalibhasha", email = "nepalibhashaorg@gmail.com" },
 ]
+keywords = [
+    "nepali",
+    "devanagari",
+    "unicode",
+    "converter",
+    "preeti",
+    "kantipur",
+    "sagarmatha",
+    "legacy-font",
+    "pdf",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Software Development :: Internationalization",
+    "Operating System :: OS Independent",
+]
+dependencies = []
 
 [project.optional-dependencies]
+pdf = ["PyMuPDF"]
 dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://nepalibhasha.github.io/nepali-fonts/"
+Repository = "https://github.com/nepalibhasha/nepali-fonts"
+Issues = "https://github.com/nepalibhasha/nepali-fonts/issues"
 
 [project.scripts]
 nepali-convert = "nepali_converter.cli:main"

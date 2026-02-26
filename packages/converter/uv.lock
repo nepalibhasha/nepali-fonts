@@ -24,21 +24,21 @@ wheels = [
 name = "nepali-converter"
 version = "0.1.0"
 source = { editable = "." }
-dependencies = [
-    { name = "pymupdf" },
-]
 
 [package.optional-dependencies]
 dev = [
     { name = "pytest" },
 ]
+pdf = [
+    { name = "pymupdf" },
+]
 
 [package.metadata]
 requires-dist = [
-    { name = "pymupdf" },
+    { name = "pymupdf", marker = "extra == 'pdf'" },
     { name = "pytest", marker = "extra == 'dev'" },
 ]
-provides-extras = ["dev"]
+provides-extras = ["pdf", "dev"]
 
 [[package]]
 name = "packaging"
