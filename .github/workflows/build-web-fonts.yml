@@ -8,9 +8,6 @@ on:
       - "scripts/build-web-fonts.py"
       - "scripts/generate-css.py"
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,11 +19,10 @@ jobs:
         working-directory: packages/font-tools
       - run: uv run --project packages/font-tools python scripts/build-web-fonts.py
       - run: python3 scripts/generate-css.py
-      - name: Commit generated files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fonts/web/ packages/web-fonts/css/
-          git diff --cached --quiet || \
-            git commit -m "chore: rebuild web fonts [skip ci]"
-          git push
+      - name: Upload built fonts as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-fonts
+          path: |
+            fonts/web/
+            packages/web-fonts/css/
