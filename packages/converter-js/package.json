@@ -13,11 +13,29 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nepalibhasha/nepali-fonts.git",
+    "directory": "packages/converter-js"
+  },
+  "author": "nepalibhasha",
+  "keywords": [
+    "nepali",
+    "unicode",
+    "converter",
+    "devanagari",
+    "preeti",
+    "kantipur",
+    "legacy-fonts"
+  ],
   "devDependencies": {
     "typescript": "^5.7",
     "vitest": "^3.0",
