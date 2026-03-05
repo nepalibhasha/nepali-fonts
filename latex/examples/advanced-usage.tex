@@ -31,10 +31,20 @@
   Language=Nepali
 ]{Mukta-Regular}
 
+\newfontfamily\nepalikalimati[
+  Path=../../fonts/sources/kalimati/,
+  Extension=.ttf,
+  UprightFont=kalimati,
+  BoldFont=kalimati,
+  ItalicFont=kalimati,
+  Script=Devanagari,
+  Language=Nepali
+]{kalimati}
+
 \begin{document}
 \section*{Advanced Usage}
 \textbf{Fonts used in this document:}\\
-Noto Sans Devanagari (primary), Noto Serif Devanagari, Mukta.
+Noto Sans Devanagari (primary), Noto Serif Devanagari, Mukta, Kalimati.
 
 \subsection*{1. Mixed Script Paragraph}
 \textit{Active font in this section: Noto Sans Devanagari}\\
@@ -60,7 +70,8 @@ JSON metadata, WOFF2 packaging, र CLI commands एउटै workflow मा �
 \textit{Each line below explicitly switches to a different font family.}
 {\nepalifont\textnepali{Noto Sans Devanagari: सफा र UI-friendly शैली।}}\\[0.4em]
 {\nepaliserif\textnepali{Noto Serif Devanagari: पुस्तक-जस्तो serif बनावट।}}\\[0.4em]
-{\nepalimukta\textnepali{Mukta: खुला आकार र आधुनिक दृश्य लय।}}
+{\nepalimukta\textnepali{Mukta: खुला आकार र आधुनिक दृश्य लय।}}\\[0.4em]
+{\nepalikalimati\textnepali{Kalimati: परम्परागत नेपाली टाइपोग्राफी शैली।}}
 
 \subsection*{4. Mixed Fonts + Mixed Scripts}
 \textit{Active Nepali font in this section: Noto Serif Devanagari}\\

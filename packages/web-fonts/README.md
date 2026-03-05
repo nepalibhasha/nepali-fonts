@@ -9,6 +9,7 @@ Optimized WOFF2 web fonts for Nepali and Devanagari text, with ready-to-use CSS 
 | Font | Weights | Variants |
 |------|---------|----------|
 | Hind | 300–700 | Full, Nepali subset |
+| Kalimati | 400 | Full, Nepali subset |
 | Mukta | 200–800 | Full, Nepali subset |
 | Noto Sans Devanagari | 100–900 | Full, Nepali subset |
 | Noto Serif Devanagari | 100–900 | Full, Nepali subset |
@@ -45,6 +46,7 @@ body {
 ### Available CSS files
 
 - `css/hind.css` / `css/hind-nepali.css`
+- `css/kalimati.css` / `css/kalimati-nepali.css`
 - `css/mukta.css` / `css/mukta-nepali.css`
 - `css/noto-sans-devanagari.css` / `css/noto-sans-devanagari-nepali.css`
 - `css/noto-serif-devanagari.css` / `css/noto-serif-devanagari-nepali.css`

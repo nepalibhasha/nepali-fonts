@@ -7,6 +7,7 @@
 #   Noto Serif Devanagari NotoSerifDevanagari-v2.006
 #   Mukta                 2.539
 #   Hind                  v2.000
+#   Kalimati              latest
 
 set -euo pipefail
 
@@ -81,6 +82,14 @@ download_and_extract \
     "Hind-2_000.zip" \
     "$FONTS_DIR/hind" \
     "*.otf"
+
+# --- Kalimati ---
+mkdir -p "$FONTS_DIR/kalimati"
+if [[ ! -f "$FONTS_DIR/kalimati/kalimati.ttf" ]]; then
+    echo "Downloading Kalimati ..."
+    curl -fsSL "https://raw.githubusercontent.com/mhnpd/nepali-font/master/fonts/Kalimati.ttf" -o "$FONTS_DIR/kalimati/kalimati.ttf"
+fi
+echo "  -> 1 font files in $FONTS_DIR/kalimati"
 
 echo ""
 echo "Done. All Tier 1 fonts downloaded to fonts/sources/."

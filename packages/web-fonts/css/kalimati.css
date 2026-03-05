@@ -1,0 +1,10 @@
+/* Kalimati — @nepalibhasha/fonts */
+
+@font-face {
+  font-family: 'Kalimati';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../fonts/web/kalimati/kalimati.woff2') format('woff2');
+  unicode-range: U+0900-097F, U+A8E0-A8FF, U+1CD0-1CFF, U+0000-00FF, U+2000-206F;
+}

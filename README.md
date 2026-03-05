@@ -8,7 +8,7 @@ Definitions and interface contracts: [`DEFINITIONS.md`](DEFINITIONS.md)
 
 ## What's included
 
-- **Curated fonts** — OFL-1.1 Devanagari fonts validated for Nepali use (Noto Sans/Serif Devanagari, Mukta, Hind)
+- **Curated fonts** — OFL-1.1 Devanagari fonts validated for Nepali use (Noto Sans/Serif Devanagari, Mukta, Hind, Kalimati)
 - **Legacy converter** — Convert Preeti, Kantipur, Sagarmatha, Himalb to Unicode (Python CLI + JS/TS)
 - **PDF rescue** — Extract and convert legacy-encoded text from PDFs (non-OCR)
 - **Web fonts** — Pre-subsetted WOFF2 with layout closure preserved, distributed as npm package

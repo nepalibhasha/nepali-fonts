@@ -1,0 +1,12 @@
+{
+    "name": "Kalimati",
+    "source_repo": "Madan Puraskar Pustakalaya",
+    "release_tag": "latest",
+    "release_date": "Unknown",
+    "license": "OFL-1.1",
+    "license_url": "",
+    "download_url": "https://raw.githubusercontent.com/mhnpd/nepali-font/master/Kalimati.ttf",
+    "variable": false,
+    "type": "sans-serif",
+    "weights": "Regular (400)"
+}
