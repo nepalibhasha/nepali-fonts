@@ -136,4 +136,5 @@ export const CHARACTER_MAP: Record<string, string> = {
   "\u00e6": "\u201c",
   "\u00e7": "ॐ",
   "\u00f7": "/",
+  "\u00ec": "त्त्",
 };

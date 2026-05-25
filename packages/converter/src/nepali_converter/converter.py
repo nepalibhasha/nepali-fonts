@@ -20,6 +20,7 @@ POST_RULES: list[tuple[str, str]] = [
     (r"(त्र|त्त)([^उभप]+?)m", r"\1m\2"),                # 2: move m past non-उभप after त्र/त्त
     (r"त्रm", "क्र"),                                    # 3: त्र+m = क्र
     (r"त्तm", "क्त"),                                    # 4: त्त+m = क्त
+    (r"व्रm", "क्र"),                                    # 4a: व्र+m = क्र (alternate keystroke for j|m)
     (r"([^उभप]+?)m", r"m\1"),                            # 5: move m before other chars
     (r"उm", "ऊ"),                                        # 6: उ+m = ऊ
     (r"भm", "झ"),                                        # 7: भ+m = झ

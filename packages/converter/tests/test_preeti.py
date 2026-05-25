@@ -58,6 +58,8 @@ PREETI_VECTORS = [
     ("k|:'tt", "प्रस्तुत"),
     ("ad]flhd", "बमोजिम"),
     ("a]d}f;dL", "बेमौसमी"),
+    ("j|m", "क्र"),
+    ("s|j|m'/", "क्रक्रुर"),
 ]
 
 
@@ -77,6 +79,11 @@ def test_unmapped_chars_passthrough():
 
 def test_empty_string():
     assert convert("", "preeti") == ""
+
+
+def test_half_tta_via_ì():
+    # ì (U+00EC) maps to half त्त for Gorkhapatra-style encoding (dxìj -> महत्त्व)
+    assert convert("dxìj", "preeti") == "महत्त्व"
 
 
 def test_whitespace_preserved():
