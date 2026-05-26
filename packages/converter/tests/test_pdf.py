@@ -61,6 +61,48 @@ def test_rescue_pdf_converts_legacy_spans(monkeypatch):
     assert " Hello " in out
 
 
+def test_rescue_pdf_converts_gorkhapatra_pdf_font_aliases(monkeypatch):
+    doc = _FakeDoc(
+        [
+            _FakePage(
+                [
+                    ("k|lj|mof", "XPMIUT+nayanepal"),
+                    (" ", "Arial"),
+                    ('dxìjk"0f{', "LSIOIR+Gorkhapatra"),
+                    (" ", "Arial"),
+                    ("j|m", "HEMVEZ+Gorkhapatra-Light"),
+                    (" ", "Arial"),
+                    ("tìjsf sf/0f", "QUXXAH+Gorkhapatra-Bold"),
+                    (" ", "Arial"),
+                    ("bƒefpkq vlƒb b‚t'ƒ", "XPMIUT+nayanepal"),
+                    (" ", "Arial"),
+                    ("ulƒG5„", "XPMIUT+nayanepal"),
+                    (" ", "Arial"),
+                    ("k/fj|md a9\\g] 5 . gofF sfo{", "FPXAJN+HimalayaboldGopa"),
+                    (" ", "Arial"),
+                    ("ljƒf6guƒ dxfguƒkflnsf", "FCSCJT+Ganess"),
+                ]
+            ),
+        ]
+    )
+
+    monkeypatch.setattr("nepali_converter.pdf.fitz.open", lambda _path: doc)
+    out = rescue_pdf("dummy.pdf")
+
+    assert "प्रक्रिया" in out
+    assert "महत्त्वपूर्ण" in out
+    assert "क्र" in out
+    assert "तत्त्वका कारण" in out
+    assert "दरभाउपत्र खरिद दस्तुर" in out
+    assert "गरिन्छ।" in out
+    assert "पराक्रम बढ्ने छ । नयाँ कार्य" in out
+    assert "विराटनगर महानगरपालिका" in out
+    assert "k|lj|mof" not in out
+    assert "dxìj" not in out
+    assert "ƒ" not in out
+    assert "„" not in out
+
+
 def test_rescue_pdf_page_range(monkeypatch):
     doc = _FakeDoc(
         [

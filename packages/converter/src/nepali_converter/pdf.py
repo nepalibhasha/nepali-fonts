@@ -10,7 +10,8 @@ from typing import TYPE_CHECKING
 
 import fitz  # PyMuPDF
 
-from nepali_converter.converter import convert
+from nepali_converter.converter import _convert_with_map, convert
+from nepali_converter.maps import preeti
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -24,6 +25,24 @@ KNOWN_LEGACY_FONTS: dict[str, str] = {
     "himalb": "himalb",
     "fontasy_himali_tt": "himalb",
     "fontasy himali tt": "himalb",
+    "gorkhapatra": "gorkhapatra",
+    "nayanepal": "gorkhapatra",
+    "ganess": "gorkhapatra",
+    "himalayaboldgopa": "gorkhapatra",
+}
+
+# These PDF font profiles are used only for span-level rescue. The Gorkhapatra
+# newspaper fonts are Preeti-like, but a few extended characters differ.
+PDF_FONT_MAPS: dict[str, dict[str, str]] = {
+    "gorkhapatra": {
+        **preeti.CHARACTER_MAP,
+        "\u0192": "र",    # ƒ
+        "\u201a": "स्",   # ‚
+        "\u201e": "।",    # „
+        "\u2020": "्",    # †
+        "\u0152": "त्त्",  # Œ
+        "\u0153": "त्र्",  # œ
+    },
 }
 
 
@@ -33,6 +52,13 @@ def _detect_legacy_font(font_name: str) -> str | None:
         if key in normalized:
             return mapped
     return None
+
+
+def _convert_legacy_text(text: str, legacy_font: str) -> str:
+    pdf_char_map = PDF_FONT_MAPS.get(legacy_font)
+    if pdf_char_map is not None:
+        return _convert_with_map(text, pdf_char_map)
+    return convert(text, legacy_font)
 
 
 def _iter_page_indices(
@@ -80,7 +106,7 @@ def rescue_pdf(
 
                         legacy_font = _detect_legacy_font(font_name)
                         if legacy_font and text:
-                            text = convert(text, legacy_font)
+                            text = _convert_legacy_text(text, legacy_font)
 
                         result_parts.append(text)
                     result_parts.append("\n")

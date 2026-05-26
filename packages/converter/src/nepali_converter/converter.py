@@ -56,6 +56,26 @@ POST_RULES: list[tuple[str, str]] = [
 _COMPILED_POST_RULES = [(re.compile(p), r) for p, r in POST_RULES]
 
 
+def _convert_with_map(text: str, char_map: dict[str, str]) -> str:
+    # Process word by word (whitespace preserved)
+    result = []
+    for token in re.split(r"(\s+)", text):
+        if not token or token.isspace():
+            result.append(token)
+            continue
+
+        # Phase 1: Character map substitution
+        mapped = "".join(char_map.get(ch, ch) for ch in token)
+
+        # Phase 2: Post-rules (shared across all fonts)
+        for pattern, replacement in _COMPILED_POST_RULES:
+            mapped = pattern.sub(replacement, mapped)
+
+        result.append(mapped)
+
+    return "".join(result)
+
+
 def convert(text: str, source_font: str) -> str:
     """Convert legacy-encoded Nepali text to Unicode.
 
@@ -77,20 +97,4 @@ def convert(text: str, source_font: str) -> str:
         )
     char_map = FONT_MAPS[font_key]
 
-    # Process word by word (whitespace preserved)
-    result = []
-    for token in re.split(r"(\s+)", text):
-        if not token or token.isspace():
-            result.append(token)
-            continue
-
-        # Phase 1: Character map substitution
-        mapped = "".join(char_map.get(ch, ch) for ch in token)
-
-        # Phase 2: Post-rules (shared across all fonts)
-        for pattern, replacement in _COMPILED_POST_RULES:
-            mapped = pattern.sub(replacement, mapped)
-
-        result.append(mapped)
-
-    return "".join(result)
+    return _convert_with_map(text, char_map)
