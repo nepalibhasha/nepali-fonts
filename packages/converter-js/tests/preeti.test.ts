@@ -51,6 +51,8 @@ const PREETI_VECTORS: [string, string][] = [
   ["k|:'tt", "प्रस्तुत"],
   ["ad]flhd", "बमोजिम"],
   ["a]d}f;dL", "बेमौसमी"],
+  ["j|m", "क्र"],
+  ["s|j|m'/", "क्रक्रुर"],
 ];
 
 describe("preeti conversion", () => {
@@ -63,6 +65,10 @@ describe("preeti conversion", () => {
   it("preserves unmapped control chars", () => {
     expect(convert("\n", "preeti")).toBe("\n");
     expect(convert("\t", "preeti")).toBe("\t");
+  });
+
+  it("converts ì to half tta", () => {
+    expect(convert("dxìj", "preeti")).toBe("महत्त्व");
   });
 
   it("preserves whitespace", () => {

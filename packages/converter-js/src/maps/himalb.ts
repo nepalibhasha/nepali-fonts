@@ -125,4 +125,5 @@ export const CHARACTER_MAP: Record<string, string> = {
   "\u00f7": "/",
   "\u00f8": "य्",
   "\u00fa": "ू",
+  "\u00ec": "त्त्",
 };

@@ -135,4 +135,5 @@ CHARACTER_MAP: dict[str, str] = {
     "\u00f7": "/",  # ÷
     "\u00f8": "य्",  # ø
     "\u00fa": "ू",  # ú
+    "\u00ec": "त्त्",  # ì -> half tta (Gorkhapatra usage)
 }
